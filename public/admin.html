@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amerikan Dil Kursu | Yönetim Paneli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header class="admin-header">
+      <div class="admin-header__content">
+        <div>
+          <h1>Amerikan Dil Kursu</h1>
+          <p>Şans Çarkı Kampanyası Yönetim Paneli</p>
+        </div>
+        <button id="logoutBtn" class="btn btn--ghost" type="button" hidden>Çıkış Yap</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+      <section id="loginSection" class="panel">
+        <h2>Yönetici Girişi</h2>
+        <form id="adminLoginForm" class="form">
+          <label for="password">Yönetici Şifresi</label>
+          <input id="password" type="password" required placeholder="Şifrenizi giriniz" />
+          <button class="btn" type="submit">Giriş Yap</button>
+          <p id="loginMessage" class="form-message"></p>
+        </form>
+      </section>
+
+      <section id="dashboard" class="dashboard" hidden>
+        <div class="dashboard__grid">
+          <article class="panel">
+            <h2>Hediye Havuzu</h2>
+            <form id="prizeForm" class="form form--horizontal">
+              <div>
+                <label for="prizeTitle">Hediye Adı</label>
+                <input id="prizeTitle" name="title" required />
+              </div>
+              <div>
+                <label for="prizeDescription">Açıklama</label>
+                <textarea id="prizeDescription" name="description" rows="2"></textarea>
+              </div>
+              <div>
+                <label for="prizeImage">Görsel URL</label>
+                <input id="prizeImage" name="imageUrl" placeholder="https://" />
+              </div>
+              <div>
+                <label for="prizeProbability">Kazanma Oranı</label>
+                <input id="prizeProbability" name="probability" type="number" min="0" step="0.01" required />
+              </div>
+              <div class="form__actions">
+                <input id="prizeId" name="id" type="hidden" />
+                <button class="btn" type="submit">Kaydet</button>
+                <button id="resetPrizeForm" class="btn btn--ghost" type="button">Sıfırla</button>
+              </div>
+              <p id="prizeMessage" class="form-message"></p>
+            </form>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Hediye</th>
+                    <th>Açıklama</th>
+                    <th>Olasılık</th>
+                    <th>Görsel</th>
+                    <th>İşlem</th>
+                  </tr>
+                </thead>
+                <tbody id="prizeTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2>Katılımcılar</h2>
+            <div class="table-wrapper table-wrapper--tall">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ad Soyad</th>
+                    <th>E-posta</th>
+                    <th>Telefon</th>
+                    <th>Dil</th>
+                    <th>IP</th>
+                    <th>Spin</th>
+                    <th>Bonus</th>
+                    <th>Tarih</th>
+                  </tr>
+                </thead>
+                <tbody id="participantTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2>Kazananlar</h2>
+            <div class="table-wrapper table-wrapper--tall">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Katılımcı</th>
+                    <th>Hediye</th>
+                    <th>Spin #</th>
+                    <th>IP</th>
+                    <th>Tarih</th>
+                  </tr>
+                </thead>
+                <tbody id="spinTableBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <template id="prizeRowTemplate">
+      <tr>
+        <td class="strong"></td>
+        <td></td>
+        <td></td>
+        <td class="image-cell"></td>
+        <td class="actions">
+          <button class="btn btn--ghost" data-action="edit">Düzenle</button>
+          <button class="btn btn--danger" data-action="delete">Sil</button>
+        </td>
+      </tr>
+    </template>
+
+    <script src="admin.js" type="module"></script>
+  </body>
+</html>

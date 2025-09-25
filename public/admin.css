@@ -1,0 +1,248 @@
+:root {
+  --color-primary: #dc2f2f;
+  --color-secondary: #0c3c78;
+  --color-bg: #f4f6fb;
+  --color-panel: #ffffff;
+  --color-text: #1f2a44;
+  --color-muted: #7082a8;
+  --radius: 20px;
+  --shadow: 0 20px 40px rgba(12, 60, 120, 0.15);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+.admin-header {
+  background: linear-gradient(120deg, var(--color-secondary), #12274d);
+  color: #fff;
+  padding: 1.8rem 3vw;
+  box-shadow: var(--shadow);
+}
+
+.admin-header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.admin-main {
+  width: min(1100px, 94vw);
+  margin: 2.5rem auto;
+}
+
+.panel {
+  background: var(--color-panel);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.panel + .panel {
+  margin-top: 2rem;
+}
+
+.dashboard__grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.dashboard__grid > .panel {
+  padding: 1.5rem 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form--horizontal {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: end;
+  gap: 1.2rem;
+}
+
+.form--horizontal textarea {
+  resize: vertical;
+}
+
+label {
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #d9e2ef;
+  font-size: 0.95rem;
+  transition: border var(--transition), box-shadow var(--transition);
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(12, 60, 120, 0.15);
+}
+
+textarea {
+  min-height: 70px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 14px;
+  border: none;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(220, 47, 47, 0.25);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn--ghost:hover {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+.btn--danger {
+  background: rgba(220, 47, 47, 0.12);
+  color: var(--color-primary);
+  border: 1px solid rgba(220, 47, 47, 0.4);
+}
+
+.btn--danger:hover {
+  background: rgba(220, 47, 47, 0.2);
+}
+
+.form__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-message {
+  min-height: 24px;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.table-wrapper--tall {
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+thead {
+  background: rgba(12, 60, 120, 0.08);
+}
+
+thead th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+}
+
+tbody td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f5;
+  font-size: 0.95rem;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(244, 246, 251, 0.6);
+}
+
+tbody tr:hover {
+  background: rgba(12, 60, 120, 0.08);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.image-cell img {
+  width: 64px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .admin-header__content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .form--horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    min-width: 540px;
+  }
+}

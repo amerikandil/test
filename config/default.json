@@ -1,0 +1,14 @@
+{
+  "server": {
+    "port": 3000,
+    "trustProxy": false
+  },
+  "admin": {
+    "password": "admin123",
+    "tokenTtlHours": 12
+  },
+  "database": {
+    "filename": "database.sqlite",
+    "schema": "./config/schema.sql"
+  }
+}
