@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amerikan Dil Kursu | Şans Çarkı Kampanyası</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="global-bg" aria-hidden="true">
+      <span class="global-bg__orb global-bg__orb--one"></span>
+      <span class="global-bg__orb global-bg__orb--two"></span>
+      <span class="global-bg__orb global-bg__orb--three"></span>
+      <span class="global-bg__grid"></span>
+    </div>
+    <header class="topbar">
+      <div class="container topbar__content">
+        <div class="brand">
+          <div class="brand__logo">ADK</div>
+          <div>
+            <h1>Amerikan Dil Kursu</h1>
+            <p>Konuş, keşfet, kazan!</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#campaign">Kampanya</a>
+          <a href="#prizes">Hediyeler</a>
+          <a href="#spin">Çarkı Çevir</a>
+        </nav>
+        <a class="admin-link" href="/admin">Yönetici Girişi</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="campaign" class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <span class="badge">Yeni Kampanya</span>
+            <h2>Şansını çevir, dil yolculuğuna avantajla başla!</h2>
+            <p>
+              Amerikan Dil Kursu olarak konuşma odaklı eğitim yaklaşımımızı bir kampanya ile taçlandırıyoruz.
+              Kişisel bilgilerini paylaş, şans çarkını çevir ve benzersiz hediyelerle dil öğrenme serüvenine enerji kat.
+            </p>
+            <ul class="hero__list">
+              <li>Her cihaz ile yalnızca bir kez standart spin hakkı</li>
+              <li>Arkadaşını davet ederek ekstra spin kazan</li>
+              <li>Hediyeleri ve kazanma oranlarını yönetim panelinden düzenle</li>
+            </ul>
+            <div class="hero__metrics">
+              <div class="metric">
+                <strong>12+</strong>
+                <span>Yıllık eğitim deneyimi</span>
+              </div>
+              <div class="metric">
+                <strong>9.5 / 10</strong>
+                <span>Öğrenci memnuniyeti</span>
+              </div>
+              <div class="metric">
+                <strong>15K+</strong>
+                <span>Başarılı mezun</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="floating-card">
+              <h3>Güçlü Eğitmen Kadrosu</h3>
+              <p>Native speaker eğitmenler ile konuşma pratiği odaklı eğitim.</p>
+            </div>
+            <div class="floating-card floating-card--right">
+              <h3>Mobil Uyumlu Deneyim</h3>
+              <p>Çarkı ister mobil ister masaüstünde ışık hızında çevir.</p>
+            </div>
+            <div class="floating-circle"></div>
+            <div class="hero__ring"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="prizes" class="prizes">
+        <div class="container">
+          <h2>Hediyelerimiz</h2>
+          <p class="section-lead">Tüm hediyeleri, açıklamalarını ve kazanma oranlarını anlık olarak yönetim panelinden güncelleyebilirsin.</p>
+          <div class="prize-grid" id="prizeList"></div>
+        </div>
+      </section>
+
+      <section id="spin" class="spin">
+        <div class="container spin__grid">
+          <div class="spin__form">
+            <h2>Çarkı çevirmek için formu doldur</h2>
+            <p>Bilgilerini paylaş, doğrula ve şans çarkını çevirerek ayrıcalıkları yakala.</p>
+            <form id="leadForm">
+              <div class="form-group">
+                <label for="fullName">Ad Soyad</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Adınızı ve soyadınızı girin" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-posta</label>
+                <input id="email" name="email" type="email" placeholder="E-posta adresiniz" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input id="phone" name="phone" type="tel" placeholder="05xx xxx xx xx" />
+              </div>
+              <div class="form-group">
+                <label for="interestedLanguage">İlgilendiğiniz Dil</label>
+                <select id="interestedLanguage" name="interestedLanguage" required>
+                  <option value="">Dil seçin</option>
+                  <option value="İngilizce">İngilizce</option>
+                  <option value="Almanca">Almanca</option>
+                  <option value="Fransızca">Fransızca</option>
+                  <option value="İspanyolca">İspanyolca</option>
+                  <option value="Rusça">Rusça</option>
+                </select>
+              </div>
+              <div class="form-group" id="referralGroup" hidden>
+                <label for="referralCode">Davet Kodunuz</label>
+                <input id="referralCode" name="referralCode" type="text" readonly />
+                <small>Davet kodunu arkadaşlarınla paylaşarak ekstra çevirim hakkı kazan.</small>
+              </div>
+              <button class="btn" type="submit">Kaydol &amp; Çevirme Ekranına Geç</button>
+              <p class="form-note" id="leadMessage"></p>
+            </form>
+          </div>
+          <div class="spin__wheel">
+            <div class="wheel-wrapper">
+              <div class="wheel-shadow"></div>
+              <div class="wheel-perspective">
+                <div class="wheel" id="wheel"></div>
+              </div>
+              <div class="wheel-pointer">
+                <span></span>
+              </div>
+              <button id="spinButton" class="btn btn--primary" disabled>Çarkı Çevir</button>
+            </div>
+            <div class="result" id="spinResult" hidden>
+              <h3>Tebrikler! 🎉</h3>
+              <p id="resultText"></p>
+              <div class="referral" id="referralBox" hidden>
+                <h4>Bir şans daha ister misin?</h4>
+                <p>Arkadaşını davet et, onlar da çarkı çevirince ekstra spin kazan.</p>
+                <div class="referral-link">
+                  <input id="referralLink" type="text" readonly />
+                  <button id="copyReferral" type="button">Kopyala</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <h4>Amerikan Dil Kursu</h4>
+          <p>Global ölçekte konuşulan dilleri ana dili gibi öğretme hedefiyle yanınızdayız.</p>
+        </div>
+        <div>
+          <h4>İletişim</h4>
+          <p>0 (212) 000 00 00</p>
+          <p>info@amerikandilkursu.com</p>
+        </div>
+        <div>
+          <h4>Kampanya Şartları</h4>
+          <p>Her IP adresi için bir standart çevirim hakkı tanımlıdır. Ek haklar davet sistemi ile kazanılabilir.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> Amerikan Dil Kursu. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
