@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vize Danışmanlık | Güvenli ve Hızlı Başvuru</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar container">
+      <div class="logo">VizePlus</div>
+      <a class="cta-link" href="#iletisim">Hemen İletişime Geç</a>
+    </nav>
+
+    <div class="hero-content container">
+      <p class="tag">Profesyonel Vize Danışmanlığı</p>
+      <h1>Vize başvurunuzda süreci sizin için kolaylaştırıyoruz.</h1>
+      <p class="subtitle">
+        Turistik, ticari, öğrenci ve aile birleşimi vizelerinde doğru evrak, doğru zamanlama ve uzman destek.
+      </p>
+      <a href="#vizeler" class="btn-primary">Vize Türlerini İncele</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="vizeler" class="section container">
+      <div class="section-head">
+        <h2>Vizeler</h2>
+        <p>İhtiyacınıza uygun vize türünü seçin, detayları birlikte planlayalım.</p>
+      </div>
+
+      <div class="visa-grid">
+        <article class="visa-card">
+          <h3>Turistik Vize</h3>
+          <p>Tatil ve kısa süreli seyahatler için başvuru hazırlığı, randevu ve evrak kontrolü.</p>
+        </article>
+
+        <article class="visa-card">
+          <h3>Ticari Vize</h3>
+          <p>İş görüşmeleri, fuar ve şirket ziyaretleri için profesyonel dosya hazırlama desteği.</p>
+        </article>
+
+        <article class="visa-card">
+          <h3>Öğrenci Vizesi</h3>
+          <p>Okul kabulünden finansal evraklara kadar adım adım danışmanlık hizmeti.</p>
+        </article>
+
+        <article class="visa-card">
+          <h3>Aile Birleşimi</h3>
+          <p>Resmi prosedürleri doğru şekilde yöneterek güvenli bir başvuru süreci sunuyoruz.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="iletisim" class="section section-contact container">
+      <div class="section-head">
+        <h2>İletişim Bilgileri</h2>
+        <p>Bilgilerinizi bırakın, uzman ekibimiz en kısa sürede sizi arasın.</p>
+      </div>
+
+      <form class="contact-form" action="#" method="post">
+        <label>
+          Ad Soyad
+          <input type="text" name="fullName" placeholder="Adınızı ve soyadınızı yazın" required />
+        </label>
+
+        <label>
+          Telefon
+          <input type="tel" name="phone" placeholder="05xx xxx xx xx" required />
+        </label>
+
+        <label>
+          E-posta
+          <input type="email" name="email" placeholder="ornek@mail.com" required />
+        </label>
+
+        <label>
+          Başvurmak İstediğiniz Vize
+          <select name="visaType" required>
+            <option value="" disabled selected>Vize türü seçiniz</option>
+            <option>Turistik Vize</option>
+            <option>Ticari Vize</option>
+            <option>Öğrenci Vizesi</option>
+            <option>Aile Birleşimi</option>
+          </select>
+        </label>
+
+        <label>
+          Mesajınız
+          <textarea name="message" rows="4" placeholder="Kısa bir not bırakabilirsiniz"></textarea>
+        </label>
+
+        <button type="submit" class="btn-primary">Bilgilerimi Gönder</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 VizePlus Danışmanlık. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
